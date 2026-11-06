@@ -80,3 +80,6 @@ lzma-rust2 = { version = "0.15", optional = true, default-features = false, feat
 hmac-sha256 = { version = "1.1", optional = true }
 pkg-config = { version = "0.3", optional = true }
 glob = { version = "0.3", optional = true }
+
+[target.'cfg(all(windows, target_env = "msvc"))'.build-dependencies]
+static_vcruntime = "3.0.0"

@@ -42,6 +42,7 @@ pub fn static_link_prerequisites(source: BinariesSource) {
 	if target_triple.contains("windows") {
 		// ONNX Runtime's Windows telemetry uses CommandLineToArgvW to search for svchost arguments since 1.30
 		println!("cargo:rustc-link-lib=shell32");
+		static_vcruntime::metabuild();
 	}
 
 	if let BinariesSource::Pyke { feature_set } = source {
